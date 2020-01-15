@@ -4,6 +4,7 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="LightScript.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CameraMovement.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
@@ -14,6 +15,7 @@
           <e p="PlayerMovement.cs" t="Include" />
           <e p="Pot.cs" t="Include" />
           <e p="Ressource.cs" t="Include" />
+          <e p="Werewolf.cs" t="Include" />
         </e>
       </e>
       <e p="GameJam2020.sln" t="IncludeFlat" />
