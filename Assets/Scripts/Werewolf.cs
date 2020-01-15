@@ -1,13 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Werewolf : Enemy
 {
     public Transform light;
+    public int cooldownAttack;
+
+    private bool stop;
+    public AudioSource heartbeatSound;
     private Transform target;
     private Rigidbody2D rigidBody;
     private Animator animator;
+    private float distance;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +28,7 @@ public class Werewolf : Enemy
     void FixedUpdate()
     {
         Walk();
+        HeartBeat();
     }
 
     private void Walk()
@@ -63,7 +71,26 @@ public class Werewolf : Enemy
         }
     }
 
-    private void GetPositionByPlayer()
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Lantern"))
+        {
+            transform.position = new Vector3(Random.Range(-10.0F, 10.0F), Random.Range(-10.0F, 10.0F), 0);
+        }
+    }
+
+    private void HeartBeat()
+    {
+        distance = Vector3.Distance(transform.position, target.position);
+
+        if (distance < 10 && !heartbeatSound.isPlaying)
+        {
+            heartbeatSound.Play();
+        }
+        else
+        {
+            heartbeatSound.Pause();
+
+        }
     }
 }
