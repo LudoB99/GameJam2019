@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Werewolf : Enemy
 {
+    public Transform light;
     private Transform target;
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -49,7 +50,7 @@ public class Werewolf : Enemy
                 SetAnimatorFloat(Vector2.left);
             }
         }
-        if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
         {
             if (direction.y > 0)
             {
@@ -60,5 +61,9 @@ public class Werewolf : Enemy
                 SetAnimatorFloat(Vector2.down);
             }
         }
+    }
+
+    private void GetPositionByPlayer()
+    {
     }
 }
