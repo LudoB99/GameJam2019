@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Werewolf : Enemy
 {
+    public Transform light;
     private Transform target;
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -60,5 +61,9 @@ public class Werewolf : Enemy
                 SetAnimatorFloat(Vector2.down);
             }
         }
+    }
+
+    private void GetPositionByPlayer()
+    {
     }
 }
