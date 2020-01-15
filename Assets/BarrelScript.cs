@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BarrelScript : Interactable
 {
-    public Player Player;
+    public LanternScript Lantern;
     public AudioSource RefillSound;
 
     public override void Interact()
     {
         if (Input.GetButtonDown("Collect") && playerInRange)
         {
-            Player.RefillOil();
+            Lantern.RefillOil();
             RefillSound.Play();
             if (DialogBox.activeInHierarchy)
             {
