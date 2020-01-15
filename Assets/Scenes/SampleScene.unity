@@ -279,7 +279,7 @@ MonoBehaviour:
   currentFacingDirection: 0
   currentMovingDirection: 0
   speed: 4
-  spotLight: {fileID: 0}
+  lantern: {fileID: 1520482497}
   footstepSound: {fileID: 109452940}
 --- !u!95 &109452937
 Animator:
@@ -663,7 +663,7 @@ Tilemap:
   - first: {x: 31, y: -36, z: 0}
     second:
       m_TileIndex: 20
-      m_TileSpriteIndex: 21
+      m_TileSpriteIndex: 36
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -762,7 +762,7 @@ Tilemap:
   - first: {x: 34, y: -35, z: 0}
     second:
       m_TileIndex: 25
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1484,8 +1484,8 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: -51910581098346941, guid: 0c8d1910f511243daabab8ae6f6a479a, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: -3009093123787269026, guid: 0c8d1910f511243daabab8ae6f6a479a,
       type: 3}
@@ -1545,8 +1545,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 203811899350848871, guid: 0c8d1910f511243daabab8ae6f6a479a, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1993247478134517415, guid: 0c8d1910f511243daabab8ae6f6a479a,
-      type: 3}
+    m_Data: {fileID: -51910581098346941, guid: 0c8d1910f511243daabab8ae6f6a479a, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 5267710783274462739, guid: 0c8d1910f511243daabab8ae6f6a479a,
       type: 3}
@@ -1589,8 +1588,9 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1147168906562122949, guid: 0c8d1910f511243daabab8ae6f6a479a,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1993247478134517415, guid: 0c8d1910f511243daabab8ae6f6a479a,
+      type: 3}
   m_TileMatrixArray:
   - m_RefCount: 95
     m_Data:
@@ -1827,6 +1827,7 @@ GameObject:
   - component: {fileID: 726024099}
   - component: {fileID: 726024098}
   - component: {fileID: 726024097}
+  - component: {fileID: 726024100}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Untagged
@@ -1950,7 +1951,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726024094}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1962,7 +1963,24 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &726024100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726024094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec1c3de1f227497a98b865b683cbbf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  enemyName: 
+  baseAttack: 0
+  moveSpeed: 1
+  light: {fileID: 0}
 --- !u!1 &876762255
 GameObject:
   m_ObjectHideFlags: 0
