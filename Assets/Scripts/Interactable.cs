@@ -13,6 +13,11 @@ public abstract class Interactable : MonoBehaviour
 
     public abstract void Interact();
 
+    void Update()
+    {
+        Interact();
+    }
+
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (hitInfo.CompareTag("Player") && !hitInfo.isTrigger)
