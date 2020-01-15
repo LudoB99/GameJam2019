@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public PlayerState currentState;
     public float speed;
+    public AudioSource footstepSound;
     private Rigidbody2D body2D;
     private Vector3 position;
     private Animator animator;
@@ -74,6 +75,10 @@ public class PlayerMovement : MonoBehaviour
     { 
         if (IsMoving())
         {
+            if (!footstepSound.isPlaying)
+            {
+                footstepSound.Play();
+            }
             position.Normalize();
             body2D.MovePosition( transform.position + position * speed * Time.deltaTime );
             animator.SetFloat("MoveX", position.x);
