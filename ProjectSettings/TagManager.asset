@@ -44,6 +44,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2601875451
+    locked: 0
+  - name: Routes
+    uniqueID: 4016704085
+    locked: 0
+  - name: New Layer
+    uniqueID: 1291353959
+    locked: 0
+  - name: Collision
+    uniqueID: 3773217735
+    locked: 0
+  - name: Wall
+    uniqueID: 4001704745
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
