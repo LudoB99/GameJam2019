@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Werewolf : Enemy
 {
-    public Transform light;
+    private bool stop;
     private Transform target;
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -20,7 +21,10 @@ public class Werewolf : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
-        Walk();
+        if (!stop)
+        {
+            Walk();
+        }
     }
 
     private void Walk()
@@ -63,7 +67,22 @@ public class Werewolf : Enemy
         }
     }
 
-    private void GetPositionByPlayer()
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Lantern"))
+        {
+            stop = true;
+            Debug.Log("enter");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Lantern"))
+        {
+            stop = false;
+            Debug.Log("exit");
+
+        }
     }
 }

@@ -279,7 +279,7 @@ MonoBehaviour:
   currentFacingDirection: 0
   currentMovingDirection: 0
   speed: 4
-  spotLight: {fileID: 1619895098}
+  lantern: {fileID: 1520482497}
   footstepSound: {fileID: 109452940}
 --- !u!95 &109452937
 Animator:
@@ -1409,6 +1409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520482498}
+  - component: {fileID: 1520482499}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -1431,6 +1432,22 @@ Transform:
   m_Father: {fileID: 109452934}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1520482499
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520482497}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.8, y: -0.24}
+  serializedVersion: 2
+  m_Radius: 2.33
 --- !u!1 &1588633774
 GameObject:
   m_ObjectHideFlags: 0
@@ -5521,7 +5538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619895096}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.2, z: 1.8}
+  m_LocalPosition: {x: 0, y: -0.3, z: 1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1520482498}
@@ -5538,9 +5555,9 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 0.60653245, b: 0.3254717, a: 1}
-  m_Intensity: 30
+  m_Intensity: 10
   m_Range: 10
-  m_SpotAngle: 102
+  m_SpotAngle: 66
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
