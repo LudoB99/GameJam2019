@@ -49,7 +49,7 @@ public class Werewolf : Enemy
                 SetAnimatorFloat(Vector2.left);
             }
         }
-        if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
         {
             if (direction.y > 0)
             {
