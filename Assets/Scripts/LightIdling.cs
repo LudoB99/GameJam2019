@@ -19,7 +19,7 @@ public class LightIdling : MonoBehaviour
     void FixedUpdate()
     {
         timer += Time.deltaTime;
-        Intensity = oscillate(timer, 6, 8);
+        Intensity = oscillate(timer, 8, 10);
         LightSource.intensity = Math.Abs(Intensity); 
     }
 
