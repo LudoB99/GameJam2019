@@ -8,6 +8,7 @@ TagManager:
   - Wood
   - breakable
   - Enemy
+  - Barrel
   layers:
   - Default
   - TransparentFX
