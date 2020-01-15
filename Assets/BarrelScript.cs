@@ -2,35 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarrelScript : MonoBehaviour
-{ 
+public class BarrelScript : Interactable
+{
     public Player Player;
     public AudioSource RefillSound;
-    private bool playerTouchingBarrel;
 
     void Update()
     {
-        if (Input.GetButtonDown("Collect") && playerTouchingBarrel)
+        if (Input.GetButtonDown("Collect") && playerInRange)
         {
             Player.RefillOil();
             RefillSound.Play();
             Debug.Log("Salut");
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        if (hitInfo.CompareTag("Player"))
-        {
-            playerTouchingBarrel = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D hitInfo)
-    {
-        if (hitInfo.CompareTag("Player"))
-        {
-            playerTouchingBarrel = false;
         }
     }
 }
