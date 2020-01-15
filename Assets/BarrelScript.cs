@@ -5,6 +5,7 @@ using UnityEngine;
 public class BarrelScript : MonoBehaviour
 { 
     public Player Player;
+    public AudioSource RefillSound;
     private bool playerTouchingBarrel;
 
     void Update()
@@ -12,6 +13,7 @@ public class BarrelScript : MonoBehaviour
         if (Input.GetButtonDown("Collect") && playerTouchingBarrel)
         {
             Player.RefillOil();
+            RefillSound.Play();
             Debug.Log("Salut");
         }
     }
