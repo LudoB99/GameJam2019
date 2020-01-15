@@ -9,6 +9,7 @@
           <e p="CameraMovement.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="KnockBack.cs" t="Include" />
+          <e p="LightIdling.cs" t="Include" />
           <e p="Log.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerHit.cs" t="Include" />
