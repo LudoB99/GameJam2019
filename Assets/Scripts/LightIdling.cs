@@ -6,26 +6,31 @@ using UnityEngine;
 public class LightIdling : MonoBehaviour
 {
     public Light LightSource;
-    float timer; 
     private float Intensity;
+    // Variables pour builder la fonction cos
+    private float timer;
+    private float speed;
+    private float scale; 
     // Start is called before the first frame update
 
     void Start()
     {
         Intensity = LightSource.intensity;
+        speed = 8; 
         timer = 0;
+        scale = 10; 
     }
 
     void FixedUpdate()
     {
         timer += Time.deltaTime;
-        Intensity = oscillate(timer, 8, 10);
+        Intensity = oscillate(timer, speed, scale);
         LightSource.intensity = Math.Abs(Intensity); 
     }
 
     float oscillate(float time, float speed, float scale)
-    {
-        return (Mathf.Cos(time * speed / Mathf.PI) * scale) + 30;
+    { 
+        int b = 30; // Éviter que la fonction tombe dans le négatif; 
+        return (Mathf.Cos(time * speed / Mathf.PI) * scale) + b; 
     }
-
 }
