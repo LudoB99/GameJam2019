@@ -7,7 +7,7 @@ public class BarrelScript : Interactable
     public Player Player;
     public AudioSource RefillSound;
 
-    void Update()
+    public override void Interact()
     {
         if (Input.GetButtonDown("Collect") && playerInRange)
         {
@@ -15,5 +15,10 @@ public class BarrelScript : Interactable
             RefillSound.Play();
             Debug.Log("Salut");
         }
+    }
+
+    void Update()
+    {
+        Interact();
     }
 }
