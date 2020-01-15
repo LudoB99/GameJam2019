@@ -82,15 +82,35 @@ public class Werewolf : Enemy
     private void HeartBeat()
     {
         distance = Vector3.Distance(transform.position, target.position);
+        Debug.Log(distance);
 
-        if (distance < 10 && !heartbeatSound.isPlaying)
+        if (distance < 10)
         {
-            heartbeatSound.Play();
+            if (!heartbeatSound.isPlaying)
+            {
+                heartbeatSound.Play();
+            }
         }
         else
         {
             heartbeatSound.Pause();
 
+        }
+        
+        if (distance < 5 && heartbeatSound.isPlaying)
+        {
+            heartbeatSound.volume = 1;
+        }
+        else
+        {
+            if (distance < 8 && heartbeatSound.isPlaying)
+            {
+                heartbeatSound.volume = 0.5f;
+            }
+            else
+            {
+                heartbeatSound.volume = 0.1f;
+            }
         }
     }
 }
