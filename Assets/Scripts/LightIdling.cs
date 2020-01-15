@@ -8,17 +8,14 @@ public class LightIdling : MonoBehaviour
     public Light LightSource;
     private float Intensity;
     // Variables pour builder la fonction cos
-    private float timer;
-    private float speed;
-    private float scale; 
+    public float timer;
+    public float speed;
+    public float scale; 
     // Start is called before the first frame update
 
     void Start()
     {
         Intensity = LightSource.intensity;
-        speed = 8; 
-        timer = 0;
-        scale = 10; 
     }
 
     void FixedUpdate()

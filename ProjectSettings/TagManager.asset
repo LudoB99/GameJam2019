@@ -9,6 +9,7 @@ TagManager:
   - breakable
   - Enemy
   - Barrel
+  - Lantern
   layers:
   - Default
   - TransparentFX
