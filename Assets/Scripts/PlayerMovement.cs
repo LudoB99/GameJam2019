@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerDirection currentFacingDirection;
     public PlayerDirection currentMovingDirection;
     public float speed;
+    public Light spotLight;
     public AudioSource footstepSound;
     private Rigidbody2D body2D;
     private Vector3 position;
@@ -124,21 +125,28 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("MoveY", 1);
             animator.SetFloat("MoveX", 0);
             currentFacingDirection = PlayerDirection.up;
+            spotLight.transform.rotation = Quaternion.Euler(270, 100, 0);
+            
         } else if (faceDirection.z < 45 && faceDirection.z > -45)
         {
             animator.SetFloat("MoveY", 0);
             animator.SetFloat("MoveX", 1);
             currentFacingDirection = PlayerDirection.right;
+            spotLight.transform.rotation = Quaternion.Euler(0, 100, 0);
+            
         } else if (faceDirection.z < -45 && faceDirection.z > -135)
         {
             animator.SetFloat("MoveY", -1);
             animator.SetFloat("MoveX", 0);
             currentFacingDirection = PlayerDirection.down;
+            spotLight.transform.rotation = Quaternion.Euler(90, 100, 0);
+            
         } else if (faceDirection.z > 135 || faceDirection.z < -135)
         {
             animator.SetFloat("MoveY", 0);
             animator.SetFloat("MoveX", -1);
             currentFacingDirection = PlayerDirection.left;
+            spotLight.transform.rotation = Quaternion.Euler(180, 100, 0);
         }
     }
 
