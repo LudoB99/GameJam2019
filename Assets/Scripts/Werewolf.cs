@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Werewolf : Enemy
 {
@@ -71,7 +72,7 @@ public class Werewolf : Enemy
     {
         if (other.CompareTag("Lantern"))
         {
-            stop = true;
+            transform.position = new Vector3(Random.Range(-10.0F, 10.0F), Random.Range(-10.0F, 10.0F), 0);
         }
     }
 
