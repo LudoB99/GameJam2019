@@ -1926,7 +1926,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 726024094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b4295f5345ee14bc9965a9ca364a7adf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1951,7 +1951,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726024094}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1963,7 +1963,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &726024100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1979,8 +1979,9 @@ MonoBehaviour:
   health: 0
   enemyName: 
   baseAttack: 0
-  moveSpeed: 0
+  moveSpeed: 1
   light: {fileID: 0}
+  cooldownAttack: 20
 --- !u!4 &744291241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4888932262468504659, guid: 4d5cc9383ff7c4f278395f9ab1f09216,
@@ -79150,6 +79151,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1520482498}
     m_Modifications:
+    - target: {fileID: 4888932262468504656, guid: 4d5cc9383ff7c4f278395f9ab1f09216,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4888932262468504658, guid: 4d5cc9383ff7c4f278395f9ab1f09216,
         type: 3}
       propertyPath: m_Name

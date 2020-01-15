@@ -1,10 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Werewolf : Enemy
 {
+<<<<<<< HEAD
     public Transform light;
+    public int cooldownAttack;
+
+
+=======
+    private bool stop;
+>>>>>>> 9b36a20d5fb5a4f0ce02892055984213bed021de
     private Transform target;
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -20,7 +29,10 @@ public class Werewolf : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
-        Walk();
+        if (!stop)
+        {
+            Walk();
+        }
     }
 
     private void Walk()
@@ -63,7 +75,19 @@ public class Werewolf : Enemy
         }
     }
 
-    private void GetPositionByPlayer()
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Lantern"))
+        {
+            transform.position = new Vector3(Random.Range(-10.0F, 10.0F), Random.Range(-10.0F, 10.0F), 0);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Lantern"))
+        {
+            stop = false;
+        }
     }
 }
