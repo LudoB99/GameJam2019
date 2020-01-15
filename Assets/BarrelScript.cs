@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BarrelScript : MonoBehaviour
 { 
-
     public Player Player;
     private bool playerTouchingBarrel;
 
@@ -13,6 +12,7 @@ public class BarrelScript : MonoBehaviour
         if (Input.GetButtonDown("Collect") && playerTouchingBarrel)
         {
             Player.RefillOil();
+            Debug.Log("Salut");
         }
     }
 
