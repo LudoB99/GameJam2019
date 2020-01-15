@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 109452937}
   - component: {fileID: 109452938}
   - component: {fileID: 109452939}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &109452933
 SpriteRenderer:
@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797325e71af8d47c0afb5cd294475dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OilQuantity: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +430,7 @@ GameObject:
   - component: {fileID: 676899275}
   - component: {fileID: 676899276}
   - component: {fileID: 676899277}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +637,7 @@ GameObject:
   - component: {fileID: 902014215}
   - component: {fileID: 902014216}
   - component: {fileID: 902014217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +784,7 @@ GameObject:
   - component: {fileID: 1349808306}
   - component: {fileID: 1349808307}
   - component: {fileID: 1349808308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +860,7 @@ GameObject:
   - component: {fileID: 1465515553}
   - component: {fileID: 1465515554}
   - component: {fileID: 1465515555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520482498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5033,7 +5034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1619895097}
   - component: {fileID: 1619895098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5241,3 +5242,107 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5110481609279928286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1864056330935787463, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 109452939}
+    - target: {fileID: 5110481609328278123, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278123, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278123, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278123, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278124, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.4019251
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278125, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278127, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_Name
+      value: OilBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110481609328278127, guid: a00f5bb6478f143ecbf2474e3c858345,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a00f5bb6478f143ecbf2474e3c858345, type: 3}
