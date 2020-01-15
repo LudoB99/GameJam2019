@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class LanternScript : MonoBehaviour
 {
+    private static readonly string[] RefillOilCheatCode = { "z", "x", "c" };
+    
     public float OilQuantity;
     public Light Light;
     public Collider2D Huge;
     public Collider2D Mid;
     public Collider2D Little;
+
+    private int _cheatCodeindex = 0;
     
     void Start()
     {
@@ -35,6 +39,29 @@ public class LanternScript : MonoBehaviour
                 {
                     Huge.enabled = false;
                 }
+            }
+        }
+
+        CheckCheatCodes();
+    }
+
+    private void CheckCheatCodes()
+    {
+        if (Input.anyKeyDown)
+        {
+            if (_cheatCodeindex < RefillOilCheatCode.Length && Input.GetKeyDown(RefillOilCheatCode[_cheatCodeindex]))
+            {
+                _cheatCodeindex++;
+            }
+            else 
+            {
+                _cheatCodeindex = 0;    
+            }
+            if (_cheatCodeindex == RefillOilCheatCode.Length)
+            {
+                RefillOil();
+                _cheatCodeindex = 0;  
+                Debug.Log("CHEAT CODE: Refill oil!");
             }
         }
     }
