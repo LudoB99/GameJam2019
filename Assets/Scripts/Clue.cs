@@ -6,8 +6,23 @@ public class Clue : MonoBehaviour
 {
 
     public GameObject clue;
+    public bool contextActive = false;
 
-    public void OnEnable()
+    public void ChangeContext()
+    {
+        contextActive = !contextActive;
+
+        if (contextActive)
+        {
+            clue.SetActive(true);
+        }
+        else
+        {
+            clue.SetActive(false);
+        }
+    }
+
+    public void Enable()
     {
         clue.SetActive(true);
     }
@@ -15,17 +30,5 @@ public class Clue : MonoBehaviour
     public void Disable()
     {
         clue.SetActive(false);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
