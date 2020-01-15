@@ -29,9 +29,4 @@ public class BarrelScript : Interactable
             DialogBox.SetActive(false);
         }
     }
-
-    void Update()
-    {
-        Interact();
-    }
 }
