@@ -273,7 +273,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  currentFacingDirection: 0
+  currentMovingDirection: 0
   speed: 4
+  spotLight: {fileID: 1619895098}
   footstepSound: {fileID: 109452940}
 --- !u!95 &109452937
 Animator:
@@ -320,6 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797325e71af8d47c0afb5cd294475dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OilQuantity: 0
+  currentDirection: 0
 --- !u!82 &109452940
 AudioSource:
   m_ObjectHideFlags: 0
@@ -774,12 +779,12 @@ PrefabInstance:
     - target: {fileID: 383897384823055876, guid: c9ceb29d6713c4c21a5d1b32f190717a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2765725
+      value: -1.62
       objectReference: {fileID: 0}
     - target: {fileID: 383897384823055876, guid: c9ceb29d6713c4c21a5d1b32f190717a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9160228
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 383897384823055876, guid: c9ceb29d6713c4c21a5d1b32f190717a,
         type: 3}
@@ -831,7 +836,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Werewolf
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 383897384823055931, guid: c9ceb29d6713c4c21a5d1b32f190717a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bfb2071507738f24a9533fa98068db21, type: 2}
+    m_RemovedComponents:
+    - {fileID: 383897384823055873, guid: c9ceb29d6713c4c21a5d1b32f190717a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c9ceb29d6713c4c21a5d1b32f190717a, type: 3}
 --- !u!1 &876762255
 GameObject:
@@ -5385,7 +5396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619895096}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 1.8}
+  m_LocalPosition: {x: 0, y: -0.2, z: 1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1520482498}
@@ -5441,10 +5452,10 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 8.767919, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
