@@ -8,6 +8,7 @@ public class LightIdling : MonoBehaviour
     public Light LightSource;
     private float Intensity;
     // Variables pour builder la fonction cos
+    public float b; // Éviter que la fonction tombe dans le négatif; 
     public float timer;
     public float speed;
     public float scale; 
@@ -26,8 +27,7 @@ public class LightIdling : MonoBehaviour
     }
 
     float oscillate(float time, float speed, float scale)
-    { 
-        int b = 30; // Éviter que la fonction tombe dans le négatif; 
+    {
         return (Mathf.Cos(time * speed / Mathf.PI) * scale) + b; 
     }
 }
