@@ -6,6 +6,10 @@ using Random = UnityEngine.Random;
 
 public class Werewolf : Enemy
 {
+    public Transform light;
+    public int cooldownAttack;
+
+    private bool stop;
     public AudioSource heartbeatSound;
     private Transform target;
     private Rigidbody2D rigidBody;
@@ -90,6 +94,7 @@ public class Werewolf : Enemy
         else
         {
             heartbeatSound.Pause();
+
         }
         
         if (distance < 5 && heartbeatSound.isPlaying)

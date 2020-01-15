@@ -13,7 +13,20 @@ public class BarrelScript : Interactable
         {
             Player.RefillOil();
             RefillSound.Play();
-            Debug.Log("Salut");
+            if (DialogBox.activeInHierarchy)
+            {
+                DialogBox.SetActive(false);
+            }
+            else
+            {
+                DialogBox.SetActive(true);
+                DialogText.text = Dialog;
+            }
+        }
+
+        if (DialogBox.activeInHierarchy && !playerInRange)
+        {
+            DialogBox.SetActive(false);
         }
     }
 
