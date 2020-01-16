@@ -9,6 +9,7 @@
         <e p="BarrelScript.cs" t="Include" />
         <e p="LanternScript.cs" t="Include" />
         <e p="MainMenu.cs" t="Include" />
+        <e p="RedGlowingEye.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AudioFade.cs" t="Include" />
           <e p="CameraMovement.cs" t="Include" />
