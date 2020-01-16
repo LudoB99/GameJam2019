@@ -23,7 +23,7 @@ public class InventoryItemScript : Interactable
             }
 
 
-            Destroy(this.gameObject, 3);
+            this.gameObject.SetActive(false);
             InventoryIcon.SetActive(true);
 
             if (this.CompareTag("Axe"))
@@ -39,6 +39,7 @@ public class InventoryItemScript : Interactable
                 Player.hasRope = true;
             }
 
+           
         }
     }
 }
