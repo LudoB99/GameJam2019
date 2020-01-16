@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Killing : MonoBehaviour
+public class killing : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("DIE");
             other.GetComponent<Player>().gameEnd();
         }
     }

@@ -212,6 +212,8 @@
           </e>
         </e>
         <e p="BarrelScript.cs" t="Include" />
+        <e p="BreakableBarrelScript.cs" t="Include" />
+        <e p="GameOverMenu.cs" t="Include" />
         <e p="InventoryItemScript.cs" t="Include" />
         <e p="killing.cs" t="Include" />
         <e p="LanternScript.cs" t="Include" />
