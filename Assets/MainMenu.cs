@@ -27,7 +27,8 @@ public class MainMenu : MonoBehaviour
         yield return new WaitUntil(() => black.color.a == 1);
         ambianceSound.Pause();
         ambianceFire.Pause();
-        //breakingInHouse.Play();
+        yield return new WaitForSeconds(1);
+        breakingInHouse.Play();
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

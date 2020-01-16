@@ -1910,7 +1910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   black: {fileID: 191227942}
   anim: {fileID: 191227941}
-  breakingInHouse: {fileID: 0}
+  breakingInHouse: {fileID: 1644181657}
   ambianceSound: {fileID: 998470185}
   ambianceFire: {fileID: 1334273816}
 --- !u!1001 &706819639
@@ -4331,10 +4331,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: df5741cf4d2ea1b40a63f40a6f9af178, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_PlayOnAwake: 0
+  m_Volume: 0.629
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
