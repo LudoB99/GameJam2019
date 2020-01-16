@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    public float sleepTime;
     public Transform target;
     public float deadlinesOnTarget;
     public Vector2 maxPositionMap; //(6.25, 14)
@@ -18,14 +19,20 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (!IsSamePosition()) Move();
+        if (!IsSamePosition()) StartCoroutine(Move());
     }
 
-    private void Move()
+    private IEnumerator Move()
     {
+        yield return new WaitForSeconds(sleepTime);
         Vector3 targetPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
         targetPosition = Bounding(targetPosition);
         transform.position = Vector3.Lerp(transform.position, targetPosition, deadlinesOnTarget);
+    }
+
+    private IEnumerator SleepMethod()
+    {
+        yield return new WaitForSeconds(sleepTime);
     }
 
     private Vector3 Bounding(Vector3 position)
