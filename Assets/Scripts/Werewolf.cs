@@ -89,7 +89,7 @@ public class Werewolf : Enemy
     private void HeartBeat()
     {
         distance = Vector3.Distance(transform.position, target.position);
-        Debug.Log(distance);
+       // Debug.Log(distance);
 
         if (distance < 10)
         {
