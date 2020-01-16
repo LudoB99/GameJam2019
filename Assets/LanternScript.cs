@@ -68,7 +68,7 @@ public class LanternScript : MonoBehaviour
 
     private void ConsumeOil()
     {
-        OilQuantity -= 0.66f;
+        OilQuantity -= 0.4f;
     }
     
     public void RefillOil()

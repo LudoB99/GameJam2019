@@ -16,6 +16,7 @@ public class Werewolf : Enemy
     private Rigidbody2D rigidBody;
     private Animator animator;
     private float distance;
+    private bool respawning;
 
     // Start is called before the first frame update
     void Start()
@@ -76,24 +77,26 @@ public class Werewolf : Enemy
     {
         if (other.CompareTag("Lantern"))
         {
-            moveSpeed = moveSpeed * -1;
-            var temp = Random.Range(minSpawn, maxSpawn);
-            Debug.Log(temp);
-            Invoke("RunAway", temp);
+            RunAway();
         }
     }
 
+    private void Spawn()
+    {
+        transform.position = new Vector3(Random.Range(target.position.x - 10.0F, target.position.x + 10.0F), Random.Range(target.position.y - 10.0F, target.position.y + 10.0F), 0);
+        moveSpeed = 2.2f;
+        respawning = false;
+    }
+    
     private void RunAway()
     {
-        Debug.Log("spawn");
-        transform.position = new Vector3(Random.Range(target.position.x - 10.0F, target.position.x + 10.0F), Random.Range(target.position.y - 10.0F, target.position.y + 10.0F), 0);
-        moveSpeed = moveSpeed / -1;
+        moveSpeed = -6;
     }
 
     private void HeartBeat()
     {
         distance = Vector3.Distance(transform.position, target.position);
-       // Debug.Log(distance);
+        Debug.Log("distance:"+distance);
 
         if (distance < 10)
         {
@@ -104,9 +107,12 @@ public class Werewolf : Enemy
         }
         else
         {
-            if (distance > 15)
+            if (distance > 20 && !respawning)
             {
-                RunAway();
+                respawning = true;
+                float time = Random.Range(minSpawn, maxSpawn);
+                Debug.Log("time:"+time);
+                Invoke("Spawn", time);
             }
             heartbeatSound.Pause();
         }
