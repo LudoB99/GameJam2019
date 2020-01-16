@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - Barrel
   - Lantern
+  - Axe
+  - Shovel
+  - Rope
   layers:
   - Default
   - TransparentFX
