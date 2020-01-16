@@ -20,6 +20,7 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>FirstBuild.app</Path>
       <Path>GameJam.app</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
