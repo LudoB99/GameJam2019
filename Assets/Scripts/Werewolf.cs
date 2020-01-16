@@ -9,7 +9,8 @@ public class Werewolf : Enemy
     public Transform light;
     public int cooldownAttack;
 
-    private bool stop;
+    public float minSpawn;
+    public float maxSpawn;
     public AudioSource heartbeatSound;
     private Transform target;
     private Rigidbody2D rigidBody;
@@ -75,15 +76,18 @@ public class Werewolf : Enemy
     {
         if (other.CompareTag("Lantern"))
         {
-            moveSpeed = -3;
-            Invoke("RunAway", 4.0f);
+            moveSpeed = moveSpeed * -1;
+            var temp = Random.Range(minSpawn, maxSpawn);
+            Debug.Log(temp);
+            Invoke("RunAway", temp);
         }
     }
 
     private void RunAway()
     {
+        Debug.Log("spawn");
         transform.position = new Vector3(Random.Range(target.position.x - 10.0F, target.position.x + 10.0F), Random.Range(target.position.y - 10.0F, target.position.y + 10.0F), 0);
-        moveSpeed = 2;
+        moveSpeed = moveSpeed * -1;
     }
 
     private void HeartBeat()
