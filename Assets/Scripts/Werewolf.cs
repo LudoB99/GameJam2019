@@ -76,7 +76,7 @@ public class Werewolf : Enemy
         if (other.CompareTag("Lantern"))
         {
             moveSpeed = -3;
-            Invoke("RunAway", 1.0f);
+            Invoke("RunAway", 4.0f);
         }
     }
 
@@ -105,6 +105,11 @@ public class Werewolf : Enemy
                 RunAway();
             }
             heartbeatSound.Pause();
+        }
+
+        if (distance <= 0)
+        {
+            animator.SetBool("IsAttacking", true);
         }
         
         if (distance < 5 && heartbeatSound.isPlaying)
