@@ -87,7 +87,7 @@ public class Werewolf : Enemy
     {
         Debug.Log("spawn");
         transform.position = new Vector3(Random.Range(target.position.x - 10.0F, target.position.x + 10.0F), Random.Range(target.position.y - 10.0F, target.position.y + 10.0F), 0);
-        moveSpeed = moveSpeed * -1;
+        moveSpeed = moveSpeed / -1;
     }
 
     private void HeartBeat()
