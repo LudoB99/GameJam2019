@@ -82,8 +82,8 @@ public class Werewolf : Enemy
 
     private void RunAway()
     {
-        transform.position = new Vector3(Random.Range(-10.0F, 10.0F), Random.Range(-10.0F, 10.0F), 0);
-        moveSpeed = 1;
+        transform.position = new Vector3(Random.Range(target.position.x - 10.0F, target.position.x + 10.0F), Random.Range(target.position.y - 10.0F, target.position.y + 10.0F), 0);
+        moveSpeed = 2;
     }
 
     private void HeartBeat()
@@ -100,8 +100,11 @@ public class Werewolf : Enemy
         }
         else
         {
+            if (distance > 15)
+            {
+                RunAway();
+            }
             heartbeatSound.Pause();
-
         }
         
         if (distance < 5 && heartbeatSound.isPlaying)
