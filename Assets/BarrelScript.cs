@@ -15,12 +15,10 @@ public class BarrelScript : Interactable
             RefillSound.Play();
             if (DialogBox.activeInHierarchy)
             {
-                Debug.Log("Active");
                 DialogBox.SetActive(false);
             }
             else
             {
-                Debug.Log("Not");
                 DialogBox.SetActive(true);
                 DialogText.text = Dialog;
             }
