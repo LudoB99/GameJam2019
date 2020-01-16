@@ -21,6 +21,10 @@ public class MainMenu : MonoBehaviour
             transition = true;
             StartCoroutine(Fading());
         }
+        else if (Input.GetButtonDown("Cancel"))
+        {
+            Application.Quit();
+        }
     }
 
     IEnumerator Fading()

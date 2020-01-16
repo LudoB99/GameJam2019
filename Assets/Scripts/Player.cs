@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -22,5 +23,10 @@ public class Player : MonoBehaviour
     public void RefillOil()
     {
         OilQuantity = 100;
+    }
+
+    public void gameEnd()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
