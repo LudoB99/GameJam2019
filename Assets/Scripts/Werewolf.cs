@@ -75,14 +75,21 @@ public class Werewolf : Enemy
     {
         if (other.CompareTag("Lantern"))
         {
-            transform.position = new Vector3(Random.Range(-10.0F, 10.0F), Random.Range(-10.0F, 10.0F), 0);
+            moveSpeed = -3;
+            Invoke("RunAway", 1.0f);
         }
+    }
+
+    private void RunAway()
+    {
+        transform.position = new Vector3(Random.Range(target.position.x - 10.0F, target.position.x + 10.0F), Random.Range(target.position.y - 10.0F, target.position.y + 10.0F), 0);
+        moveSpeed = 2;
     }
 
     private void HeartBeat()
     {
         distance = Vector3.Distance(transform.position, target.position);
-        Debug.Log(distance);
+       // Debug.Log(distance);
 
         if (distance < 10)
         {
@@ -93,8 +100,11 @@ public class Werewolf : Enemy
         }
         else
         {
+            if (distance > 15)
+            {
+                RunAway();
+            }
             heartbeatSound.Pause();
-
         }
         
         if (distance < 5 && heartbeatSound.isPlaying)

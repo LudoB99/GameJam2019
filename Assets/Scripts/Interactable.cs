@@ -18,11 +18,6 @@ public abstract class Interactable : MonoBehaviour
         Interact();
     }
 
-    void EnableDialogComponent()
-    {
-
-    }
-
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (hitInfo.CompareTag("Player") && !hitInfo.isTrigger)
