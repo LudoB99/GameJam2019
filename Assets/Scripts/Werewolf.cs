@@ -75,8 +75,15 @@ public class Werewolf : Enemy
     {
         if (other.CompareTag("Lantern"))
         {
-            transform.position = new Vector3(Random.Range(-10.0F, 10.0F), Random.Range(-10.0F, 10.0F), 0);
+            moveSpeed = -3;
+            Invoke("RunAway", 1.0f);
         }
+    }
+
+    private void RunAway()
+    {
+        transform.position = new Vector3(Random.Range(-10.0F, 10.0F), Random.Range(-10.0F, 10.0F), 0);
+        moveSpeed = 1;
     }
 
     private void HeartBeat()
