@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
 
     private Animator animator;
     public PlayerDirection currentDirection;
+    public bool hasAxe;
+    public bool hasRope;
+    public bool hasShovel;
 
     // Start is called before the first frame update
     void Start()
